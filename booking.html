@@ -8,22 +8,32 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/hotel_logo.jpg" alt="Отлежи Бока">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="rooms.html">Номера</a></li>
-                    <li><a href="booking.html">Бронирование</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
+    <div class="container">
+        <div class="logo">
+            <img src="images/hotel_logo.jpg" alt="Отлежи Бока" data-i18n-alt="logo_alt">
         </div>
-    </header>
-
+        <nav>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Главная</a></li>
+                <li><a href="rooms.html" data-i18n="nav_rooms">Номера</a></li>
+                <li><a href="booking.html" data-i18n="nav_booking">Бронирование</a></li>
+                <li><a href="contacts.html" data-i18n="nav_contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
+        <div class="lang-switcher">
+            <button id="lang-ru" class="lang-btn active">RU</button>
+            <button id="lang-en" class="lang-btn">EN</button>
+        </div>
+        <!-- Гамбургер для мобильных -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+    
     <main>
         <section class="page-header">
             <div class="container">
@@ -106,4 +116,5 @@
     <script src="js/script.js"></script>
     <script src="js/booking.js"></script>
 </body>
+
 </html>
