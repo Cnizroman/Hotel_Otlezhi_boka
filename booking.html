@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование — Отлежи Бока</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/hotel_logo.jpg" alt="Отлежи Бока">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="rooms.html">Номера</a></li>
+                    <li><a href="booking.html">Бронирование</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Забронировать номер</h2>
+                <p>Заполните форму — мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </section>
+
+        <section class="booking-form">
+            <div class="container">
+                <form action="send_booking.php" method="POST" id="bookingForm" novalidate>
+                    <!-- Honeypot поле для защиты от спама -->
+                    <div style="display:none;">
+                        <label for="honeypot">Не заполняйте это поле</label>
+                        <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Ваше ФИО *</label>
+                            <input type="text" id="name" name="name" required placeholder="ФИО">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Гостей</label>
+                            <input type="number" id="guests" name="guests" min="1" max="10" value="2">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkin">Заезд *</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Выезд *</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_type">Тип номера *</label>
+                        <select id="room_type" name="room_type" required>
+                            <option value="">Выберите номер</option>
+                            <option value="standard">Стандарт</option>
+                            <option value="lux">Люкс</option>
+                            <option value="family">Семейный</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment" rows="3" placeholder="Хочу номер с видом на закат и бутылку шампанского..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Отправить заявку</button>
+                    <!-- Индикатор загрузки (скрыт по умолчанию) -->
+<div id="loading-indicator" style="display: none; text-align: center; margin-top: 20px;">
+    <div class="loading-spinner" style="display: inline-block; width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid var(--accent-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+    <p style="margin-top: 10px;">Отправка заявки...</p>
+</div>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>© 2026 Отель «Отлежи Бока». Все права защищены.</p>
+        <p class="support">создано при поддержке <a href="https://cnizroman.github.io/otkusi.babla/" target="_blank">Откуси Бабла</a> | При оплате картой банка — скидка 30%</p>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

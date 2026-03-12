@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши номера — Отлежи Бока</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- UPDATED: убраны внутренние стили для лайтбокса, теперь они в общем CSS -->
+</head>
+<body>
+   <header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/hotel_logo.jpg" alt="Отлежи Бока" data-i18n-alt="logo_alt">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Главная</a></li>
+                <li><a href="rooms.html" data-i18n="nav_rooms">Номера</a></li>
+                <li><a href="booking.html" data-i18n="nav_booking">Бронирование</a></li>
+                <li><a href="contacts.html" data-i18n="nav_contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
+        <div class="lang-switcher">
+            <button id="lang-ru" class="lang-btn active">RU</button>
+            <button id="lang-en" class="lang-btn">EN</button>
+        </div>
+        <!-- Гамбургер для мобильных -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Наши номера</h2>
+                <p>Выберите идеальное место для своего отдыха</p>
+            </div>
+        </section>
+
+        <section class="rooms-grid">
+            <div class="container">
+                <!-- Карточка Стандарт -->
+                <div class="room-card">
+                    <img src="images/room1.jpg" alt="Стандарт" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Стандарт'">
+                    <div class="room-info">
+                        <h3>Стандарт</h3>
+                        <p>🛏️ Уютный номер для одного или двоих. Всё необходимое для комфортного отдыха. Wi-Fi, кондиционер, душ.</p>
+                        <div class="price">от 3 000 ₽/сутки</div>
+                        <a href="booking.html?room=standard" class="btn btn-primary">Забронировать</a>
+                    </div>
+                </div>
+                <!-- Карточка Люкс -->
+                <div class="room-card">
+                    <img src="images/room2.jpg" alt="Люкс" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Люкс'">
+                    <div class="room-info">
+                        <h3>Люкс</h3>
+                        <p>🏛️ Просторный номер с гостиной зоной и панорамным видом на город. Джакузи, мини-бар, халат и тапочки.</p>
+                        <div class="price">от 5 500 ₽/сутки</div>
+                        <a href="booking.html?room=lux" class="btn btn-primary">Забронировать</a>
+                    </div>
+                </div>
+                <!-- Карточка Семейный -->
+                <div class="room-card">
+                    <img src="images/room3.jpg" alt="Семейный" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Семейный'">
+                    <div class="room-info">
+                        <h3>Семейный</h3>
+                        <p>👨‍👩‍👧 Две смежные комнаты для отдыха с детьми. Есть детская кроватка, игрушки и безопасные розетки.</p>
+                        <div class="price">от 4 800 ₽/сутки</div>
+                        <a href="booking.html?room=family" class="btn btn-primary">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- БЛОК УДОБСТВ ОТЕЛЯ (с кликабельными фото) -->
+                <section class="features" style="margin-top: 60px;">
+                    <h2 style="text-align: center; font-size: 32px; color: var(--text-main); margin-bottom: 40px;">Всё для вашего комфорта</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <img src="images/Bathroom.jpg" alt="Душевая" class="lightbox-trigger" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+                            <h3>Удобные душевые</h3>
+                            <p>Просторные кабины, круглосуточная горячая вода, премиальная косметика и мягкие полотенца.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="images/Bathroom2.jpg" alt="Ванная комната" class="lightbox-trigger" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+                            <h3>Ванны премиум-класса</h3>
+                            <p>В некоторых номерах — отдельные ванны, чтобы расслабиться после долгого дня.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="images/Holl.jpg" alt="Холл с кафетерием" class="lightbox-trigger" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+                            <h3>Просторный холл с кафетерием</h3>
+                            <p>Уютное пространство, где можно выпить ароматный кофе, поработать или встретиться с друзьями.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="images/Conf_room.jpg" alt="Конференц-зал" class="lightbox-trigger" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+                            <h3>Конференц-зал</h3>
+                            <p>Оборудованный зал для деловых встреч, переговоров и мероприятий. Всё необходимое включено.</p>
+                        </div>
+                        <div class="feature-card">
+                            <img src="images/Dop_items.jpg" alt="Дополнительные удобства" class="lightbox-trigger" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+                            <h3>Мелочи для приятного отдыха</h3>
+                            <p>Халаты, тапочки, зубные наборы, чай/кофе в номере — мы позаботились о деталях.</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- КОНЕЦ БЛОКА УДОБСТВ -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="container">
+        <p>© 2026 Отель «Отлежи Бока». Все права защищены.</p>
+        <p class="support">создано при поддержке <a href="https://cnizroman.github.io/otkusi.babla/" target="_blank">Откуси Бабла</a> | При оплате картой банка — скидка 30%</p>
+    </div>
+</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
