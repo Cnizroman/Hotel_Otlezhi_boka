@@ -3,49 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бронирование — Отлежи Бока</title>
+    <title data-i18n="booking_header_title">Бронирование — Отлежи Бока</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-    <div class="container">
-        <div class="logo">
-            <img src="images/hotel_logo.jpg" alt="Отлежи Бока" data-i18n-alt="logo_alt">
+        <div class="container">
+            <div class="logo">
+                <img src="images/hotel_logo.jpg" alt="Отлежи Бока" data-i18n-alt="logo_alt">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav_home">Главная</a></li>
+                    <li><a href="rooms.html" data-i18n="nav_rooms">Номера</a></li>
+                    <li><a href="booking.html" data-i18n="nav_booking">Бронирование</a></li>
+                    <li><a href="contacts.html" data-i18n="nav_contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
+            <div class="lang-switcher">
+                <button id="lang-ru" class="lang-btn active">RU</button>
+                <button id="lang-en" class="lang-btn">EN</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-i18n="nav_home">Главная</a></li>
-                <li><a href="rooms.html" data-i18n="nav_rooms">Номера</a></li>
-                <li><a href="booking.html" data-i18n="nav_booking">Бронирование</a></li>
-                <li><a href="contacts.html" data-i18n="nav_contacts">Контакты</a></li>
-            </ul>
-        </nav>
-        <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">🌙</button>
-        <div class="lang-switcher">
-            <button id="lang-ru" class="lang-btn active">RU</button>
-            <button id="lang-en" class="lang-btn">EN</button>
-        </div>
-        <!-- Гамбургер для мобильных -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-    
+    </header>
+
     <main>
         <section class="page-header">
             <div class="container">
-                <h2>Забронировать номер</h2>
-                <p>Заполните форму — мы свяжемся с вами в ближайшее время</p>
+                <h2 data-i18n="booking_header_title">Забронировать номер</h2>
+                <p data-i18n="booking_header_sub">Заполните форму — мы свяжемся с вами в ближайшее время</p>
             </div>
         </section>
 
         <section class="booking-form">
             <div class="container">
                 <form action="send_booking.php" method="POST" id="bookingForm" novalidate>
-                    <!-- Honeypot поле для защиты от спама -->
+                    <!-- Honeypot поле -->
                     <div style="display:none;">
                         <label for="honeypot">Не заполняйте это поле</label>
                         <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
@@ -53,53 +52,53 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Ваше ФИО *</label>
-                            <input type="text" id="name" name="name" required placeholder="ФИО">
+                            <label for="name" data-i18n="form_name_label">Ваше ФИО *</label>
+                            <input type="text" id="name" name="name" required data-i18n-placeholder="form_name_placeholder" placeholder="ФИО">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+                            <label for="email" data-i18n="form_email_label">Email *</label>
+                            <input type="email" id="email" name="email" required data-i18n-placeholder="form_email_placeholder" placeholder="ivan@example.com">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone">Телефон *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                            <label for="phone" data-i18n="form_phone_label">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required data-i18n-placeholder="form_phone_placeholder" placeholder="+7 (999) 123-45-67">
                         </div>
                         <div class="form-group">
-                            <label for="guests">Гостей</label>
+                            <label for="guests" data-i18n="form_guests_label">Гостей</label>
                             <input type="number" id="guests" name="guests" min="1" max="10" value="2">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="checkin">Заезд *</label>
+                            <label for="checkin" data-i18n="form_checkin_label">Заезд *</label>
                             <input type="date" id="checkin" name="checkin" required>
                         </div>
                         <div class="form-group">
-                            <label for="checkout">Выезд *</label>
+                            <label for="checkout" data-i18n="form_checkout_label">Выезд *</label>
                             <input type="date" id="checkout" name="checkout" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="room_type">Тип номера *</label>
+                        <label for="room_type" data-i18n="form_room_label">Тип номера *</label>
                         <select id="room_type" name="room_type" required>
-                            <option value="">Выберите номер</option>
-                            <option value="standard">Стандарт</option>
-                            <option value="lux">Люкс</option>
-                            <option value="family">Семейный</option>
+                            <option value="" data-i18n="form_room_option_default">Выберите номер</option>
+                            <option value="standard" data-i18n="form_room_option_standard">Стандарт</option>
+                            <option value="lux" data-i18n="form_room_option_lux">Люкс</option>
+                            <option value="family" data-i18n="form_room_option_family">Семейный</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="comment">Комментарий</label>
-                        <textarea id="comment" name="comment" rows="3" placeholder="Хочу номер с видом на закат и бутылку шампанского..."></textarea>
+                        <label for="comment" data-i18n="form_comment_label">Комментарий</label>
+                        <textarea id="comment" name="comment" rows="3" data-i18n-placeholder="form_comment_placeholder" placeholder="Хочу номер с видом на закат и бутылку шампанского..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="submitBtn">Отправить заявку</button>
-                    <!-- Индикатор загрузки (скрыт по умолчанию) -->
-<div id="loading-indicator" style="display: none; text-align: center; margin-top: 20px;">
-    <div class="loading-spinner" style="display: inline-block; width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid var(--accent-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
-    <p style="margin-top: 10px;">Отправка заявки...</p>
-</div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" data-i18n="submit_btn">Отправить заявку</button>
+                    <!-- Индикатор загрузки -->
+                    <div id="loading-indicator" style="display: none; text-align: center; margin-top: 20px;">
+                        <div class="loading-spinner" style="display: inline-block; width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid var(--accent-primary); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <p data-i18n="loading_text">Отправка заявки...</p>
+                    </div>
                 </form>
                 <div id="form-message" class="form-message"></div>
             </div>
@@ -107,14 +106,13 @@
     </main>
 
     <footer>
-    <div class="container">
-        <p>© 2026 Отель «Отлежи Бока». Все права защищены.</p>
-        <p class="support">создано при поддержке <a href="https://cnizroman.github.io/otkusi.babla/" target="_blank">Откуси Бабла</a> | При оплате картой банка — скидка 30%</p>
-    </div>
-</footer>
+        <div class="container">
+            <p data-i18n-html="footer_copyright">© 2026 Отель «Отлежи Бока». Все права защищены.</p>
+            <p class="support" data-i18n-html="footer_support">создано при поддержке <a href="https://cnizroman.github.io/otkusi.babla/" target="_blank">Откуси Бабла</a> | При оплате картой банка — скидка 30%</p>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
     <script src="js/booking.js"></script>
 </body>
-
 </html>
